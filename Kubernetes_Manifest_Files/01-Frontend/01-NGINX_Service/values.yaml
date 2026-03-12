@@ -1,0 +1,11 @@
+appname: nginx-deployment
+servicename: nginx-service
+configmapname: nginx-configmap
+
+namespace: emartapp-application
+
+image:
+  name: nginx
+  tag: latest
+
+replicas: 1
