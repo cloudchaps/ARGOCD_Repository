@@ -1,6 +1,6 @@
 appname: nginx-deployment
 servicename: nginx-service
-configmapname: nginx-configmap
+configmapname: nginx-config
 
 namespace: emartapp-application
 
