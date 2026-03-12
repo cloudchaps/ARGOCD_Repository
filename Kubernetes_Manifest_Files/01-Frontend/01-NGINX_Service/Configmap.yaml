@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  namespace: web
+data:
+  nginx.conf: |
+    events {}
+
+    http {
+      server {
+        listen 80;
+
+        location / {
+          return 200 "Hello from Kubernetes NGINX!\n";
+        }
+
+        location /health {
+          return 200 "OK\n";
+        }
+      }
+    }
