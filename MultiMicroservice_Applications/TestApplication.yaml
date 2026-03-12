@@ -5,9 +5,9 @@ metadata:
   namespace: argocd
 spec: 
   destination: 
-    namespace: guestbook
+    namespace: emartapp-application
     server: "https://kubernetes.default.svc"
-  project: default
+  project: helmk8s-project
   
   source: 
     path: Kubernetes_Manifest_Files/01-Frontend/01-NGINX_Service
