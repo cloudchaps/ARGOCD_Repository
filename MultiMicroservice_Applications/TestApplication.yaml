@@ -7,7 +7,7 @@ spec:
   destination: 
     namespace: emartapp-application
     server: "https://kubernetes.default.svc"
-  project: helmk8s-project
+  project: default
   
   source: 
     path: Kubernetes_Manifest_Files/01-Frontend/01-NGINX_Service
