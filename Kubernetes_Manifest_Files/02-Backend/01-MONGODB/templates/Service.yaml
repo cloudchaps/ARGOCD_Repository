@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongo-service
+  name: {{ Val }}
   namespace: database
 spec:
   selector:
-    app: mongo
+    app: {{ Values.appname }}
 
   ports:
   - port: 27017

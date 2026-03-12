@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Values.namespace }}
 spec:
   selector:
-    app: {{ .Values.appname }}
+    app: nginx
 
   ports:
   - port: 80

@@ -1,0 +1,11 @@
+appname: mongo-deployment
+servicename: mongo-service
+configmapname: nginx-configmap
+
+namespace: emartapp-application
+
+image:
+  name: nginx
+  tag: latest
+
+replicas: 1

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongo
+  name: {{ Values.appname }}
   namespace: database
 spec:
   replicas: 1
