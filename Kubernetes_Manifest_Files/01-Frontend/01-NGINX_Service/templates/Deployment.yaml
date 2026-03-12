@@ -8,12 +8,12 @@ spec:
 
   selector:
     matchLabels:
-      app: {{ .Values.servicename }}
+      app: {{ .Values.appname }}
 
   template:
     metadata:
       labels:
-        app: {{ .Values.configmapname }}
+        app: {{ .Values.appname }}
 
     spec:
       containers:
