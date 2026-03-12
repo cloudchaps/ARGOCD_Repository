@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: guestbook
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: guestbook
+    server: "https://kubernetes.default.svc"
+  project: default
+  source: 
+    path: Kubernetes_Manifest_Files/01-Frontend/01-NGINX_Service
+    repoURL: "https://github.com/cloudchaps/ARGOCD_Repository.git"
+    targetRevision: main
+  
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
