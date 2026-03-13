@@ -2,8 +2,16 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mongo-init-script
-  namespace: database
+  namespace: emartapp-application
 data:
   init-db.js: |
-    db = db.getSiblingDB('epoc');
-    print("Database initialized");
+    db = db.getSiblingDB('appdb');
+
+    db.createCollection("users");
+
+    db.users.insertMany([
+      { name: "Alice", role: "admin" },
+      { name: "Bob", role: "user" }
+    ]);
+
+    print("Database initialized with sample users");

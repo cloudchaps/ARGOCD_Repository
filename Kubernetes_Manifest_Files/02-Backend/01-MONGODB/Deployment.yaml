@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongo
-  namespace: database
+  namespace: emartapp-application
 spec:
   replicas: 2
 
