@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ Values.appname }}
+  name: mongo
   namespace: database
 spec:
-  replicas: 1
+  replicas: 2
 
   selector:
     matchLabels:
