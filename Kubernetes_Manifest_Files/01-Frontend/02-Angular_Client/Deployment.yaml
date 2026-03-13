@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-service
+  namespace: emartapp-application
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: client-service
+  template:
+    metadata:
+      labels:
+        app: client-service
+    spec:
+      containers:
+      - name: client-service
+        image: 084828572941.dkr.ecr.us-east-1.amazonaws.com/dev_emart_client:latest
+        ports:
+        - containerPort: 4200
