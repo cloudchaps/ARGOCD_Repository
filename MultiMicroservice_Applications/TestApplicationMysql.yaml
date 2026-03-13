@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: mongodb2
+  name: mysql
   namespace: argocd
 spec: 
   destination: 
@@ -10,7 +10,7 @@ spec:
   project: default
   
   source: 
-    path: Kubernetes_Manifest_Files/02-Backend/01-MONGODB
+    path: Kubernetes_Manifest_Files/02-Backend/02-MYSQL
     repoURL: "https://github.com/cloudchaps/ARGOCD_Repository.git"
     targetRevision: main
     
