@@ -20,7 +20,7 @@ spec:
         - containerPort: 9000
         env:
         - name: SPRING_DATASOURCE_URL
-          value: jdbc:mysql://mysql-service:3306/books?useSSL=false&allowPublicKeyRetrieval=true
+          value: jdbc:mysql://emartdb:3306/books?useSSL=false&allowPublicKeyRetrieval=true
         - name: SPRING_DATASOURCE_USERNAME
           value: root
         - name: SPRING_DATASOURCE_PASSWORD
