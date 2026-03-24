@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: client-service
-        image: darosa87/cloudchaps
+        image: darosa87/cloudchaps:1.0
         ports:
         - containerPort: 4200
