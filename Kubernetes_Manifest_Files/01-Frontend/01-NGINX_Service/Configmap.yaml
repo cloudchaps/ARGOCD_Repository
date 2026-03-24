@@ -23,10 +23,10 @@ data:
               proxy_pass http://client/;
           }
           location /api {
-              proxy_pass http://api:5000;
+              proxy_pass http://nodeapi-service:5000;
           }
           location /webapi {
-              proxy_pass http://webapi:9000;
+              proxy_pass http://javaapi-service:9000;
           }
       }
     }
