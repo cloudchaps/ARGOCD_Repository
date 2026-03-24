@@ -4,6 +4,7 @@ metadata:
   name: mongo-init-script
   namespace: emartapp-application
 data:
+  MONGO_URI: "mongodb://admin:example@mongo-service:27017/epoc?authSource=admin"
   init-db.js: |
     db = db.getSiblingDB('appdb');
 
