@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javaapi-service
+  namespace: emartapp-application
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: javaapi-service
+  template:
+    metadata:
+      labels:
+        app: javaapi-service
+    spec:
+      containers:
+      - name: javaapi-service
+        image: darosa87/emartappjavaapi:latest
+        ports:
+        - containerPort: 9000
