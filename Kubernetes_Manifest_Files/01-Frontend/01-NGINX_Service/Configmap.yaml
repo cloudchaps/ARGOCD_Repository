@@ -8,7 +8,7 @@ data:
     events {}
     http {
       upstream client {
-          server client:4200;
+          server client-service:4200;
       }
       server {
           listen 80;
