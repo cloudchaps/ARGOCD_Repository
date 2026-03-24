@@ -6,13 +6,6 @@ metadata:
 data:
   MONGO_URI: "mongodb://admin:example@mongo-service:27017/epoc?authSource=admin"
   init-db.js: |
-    db = db.getSiblingDB('appdb');
-
+    db = db.getSiblingDB('epoc');
     db.createCollection("users");
-
-    db.users.insertMany([
-      { name: "Alice", role: "admin" },
-      { name: "Bob", role: "user" }
-    ]);
-
-    print("Database initialized with sample users");
+    print("Database epoc initialized");

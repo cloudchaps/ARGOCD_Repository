@@ -20,4 +20,4 @@ spec:
         - containerPort: 5000
         env:
         - name: MONGO_URI
-          value: mongodb://admin:example@emongo:27017/appdb?authSource=admin
+          value: mongodb://emongo:27017/epoc
