@@ -7,7 +7,7 @@ spec:
   project: default
 
   destination:
-    server: "https://kubernetes.default.svc"
+    server: "https://B467C3A819A2BD4114ADC55237A6677B.gr7.us-east-1.eks.amazonaws.com"
     namespace: microservices
 
   sources:

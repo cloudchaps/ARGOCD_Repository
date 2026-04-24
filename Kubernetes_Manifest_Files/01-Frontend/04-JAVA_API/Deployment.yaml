@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: javaapi-service
-        image: darosa87/emartappjavaapi:latest
+        image: darosa87/emartappjavaapi:v1.0.1
         ports:
         - containerPort: 9000
         env:
