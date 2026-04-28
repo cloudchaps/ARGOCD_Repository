@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
-  namespace: emartapp-qa
+  namespace: emartapp-qa 
   annotations:
     argocd.argoproj.io/sync-wave: "2"
 spec:
