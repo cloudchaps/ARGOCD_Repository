@@ -10,7 +10,7 @@ spec:
       http:
         paths:
           - path: /
-            pathType: prefix
+            pathType: Prefix
             backend:
               service:
                 name: client
@@ -18,7 +18,7 @@ spec:
                   number: 4200
 
           - path: /webapi
-            pathType: prefix
+            pathType: Prefix
             backend:
               service:
                 name: javaapi-service
@@ -26,7 +26,7 @@ spec:
                   number: 9000
 
           - path: /api
-            pathType: prefix
+            pathType: Prefix
             backend:
               service:
                 name: nodeapi-service
