@@ -9,7 +9,7 @@ metadata:
 spec: 
   destination: 
     namespace: qa-remote-cluster
-    server: "https://ED696E7589BA7CA7C3378A23EDAD6B2D.gr7.us-east-1.eks.amazonaws.com"
+    server: "https://843B2BB2F606482A6D37E09A4E6B2276.gr7.us-east-1.eks.amazonaws.com"
   project: default
   
   source: 
