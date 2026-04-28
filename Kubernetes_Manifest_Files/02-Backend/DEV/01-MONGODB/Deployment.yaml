@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: mongo
   namespace: emartapp-DEV
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   replicas: 1
 

@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: mongo-init-script
   namespace: emartapp-DEV
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 data:
   MONGO_URI: "mongodb://admin:example@mongo-service:27017/epoc?authSource=admin"
   init-db.js: |

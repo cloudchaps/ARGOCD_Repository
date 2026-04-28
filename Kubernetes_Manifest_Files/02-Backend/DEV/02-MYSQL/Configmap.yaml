@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: mysql-config
   namespace: emartapp-dev
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 data:
   MYSQL_DATABASE: books
   DB_HOST: emartdb
