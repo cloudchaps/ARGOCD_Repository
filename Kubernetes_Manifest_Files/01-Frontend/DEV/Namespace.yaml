@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: emartapp-DEV
+  name: emartapp-dev
   labels:
     environment: DEV
   annotations:
