@@ -1,7 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: mongodb2
+  name: namespaceandsecrets
+  labels:
+    owner: cloudchaps
+    env: dev
   namespace: argocd
 spec: 
   destination: 
@@ -10,7 +13,7 @@ spec:
   project: default
   
   source: 
-    path: Kubernetes_Manifest_Files/02-Backend/DEV
+    path: Kubernetes_Manifest_Files/01-Frontend/DEV
     repoURL: "https://github.com/cloudchaps/ARGOCD_Repository.git"
     targetRevision: main
     
