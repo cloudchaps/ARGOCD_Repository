@@ -10,7 +10,7 @@ spec:
   project: default
   
   source: 
-    path: Kubernetes_Manifest_Files/01-Frontend/DEV/01-NGINX_Service
+    path: Kubernetes_Manifest_Files/01-Frontend/DEV/05-IngressController
     repoURL: "https://github.com/cloudchaps/ARGOCD_Repository.git"
     targetRevision: main
     
