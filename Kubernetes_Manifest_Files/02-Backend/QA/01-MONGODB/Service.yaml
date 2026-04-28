@@ -2,7 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: emongo
-  namespace: emartapp-QA
+  namespace: emartapp-qa
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   selector:
     app: mongo

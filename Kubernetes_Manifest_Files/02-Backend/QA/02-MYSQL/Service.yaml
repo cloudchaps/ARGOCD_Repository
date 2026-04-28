@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: emartdb
   namespace: emartapp-qa
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   selector:
     app: mysql
