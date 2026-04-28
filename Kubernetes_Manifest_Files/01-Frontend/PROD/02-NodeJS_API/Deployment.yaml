@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeapi-service
+  namespace: emartapp-PROD
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodeapi-service
+  template:
+    metadata:
+      labels:
+        app: nodeapi-service
+    spec:
+      containers:
+      - name: nodeapi-service
+        image: darosa87/emartnodeapi
+        ports:
+        - containerPort: 5000
+        env:
+        - name: MONGO_URI
+          value: mongodb://emongo:27017/epoc

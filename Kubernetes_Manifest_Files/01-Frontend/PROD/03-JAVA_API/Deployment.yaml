@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javaapi-service
+  namespace: emartapp-PROD
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: javaapi-service
+  template:
+    metadata:
+      labels:
+        app: javaapi-service
+    spec:
+      containers:
+      - name: javaapi-service
+        image: darosa87/emartappjavaapi:v1.0.1
+        ports:
+        - containerPort: 9000
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:mysql://emartdb:3306/books?useSSL=false&allowPublicKeyRetrieval=true
+        - name: SPRING_DATASOURCE_USERNAME
+          value: root
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: emartdbpass

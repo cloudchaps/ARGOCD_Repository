@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: client
+  namespace: emartapp-PROD
+spec:
+  selector:
+    app: client
+
+  ports:
+  - port: 4200
+    targetPort: 4200
+
+  type: ClusterIP
