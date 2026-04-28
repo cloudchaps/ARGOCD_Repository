@@ -15,7 +15,7 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: angular-service
+                name: client
                 port:
                   number: 4200
 
@@ -23,7 +23,7 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: java-api-service
+                name: javaapi-service
                 port:
                   number: 9000
 
@@ -31,6 +31,6 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: node-api-service
+                name: nodeapi-service
                 port:
                   number: 5000
