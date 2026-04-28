@@ -19,7 +19,7 @@ spec:
                 port:
                   number: 4200
 
-          - path: /api/java(/|$)(.*)
+          - path: /webapi
             pathType: ImplementationSpecific
             backend:
               service:
@@ -27,7 +27,7 @@ spec:
                 port:
                   number: 9000
 
-          - path: /api/node(/|$)(.*)
+          - path: /api
             pathType: ImplementationSpecific
             backend:
               service:
