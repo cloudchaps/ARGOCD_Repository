@@ -15,13 +15,36 @@ spec:
     spec:
       containers:
       - name: javaapi-service
-        image: darosa87/emartappjavaapi:v1.0.1
+        image: darosa87/emartappjavaapi:v1.0.2
         ports:
         - containerPort: 9000
         env:
-        - name: SPRING_DATASOURCE_URL
-          value: jdbc:mysql://emartdb:3306/books?useSSL=false&allowPublicKeyRetrieval=true
-        - name: SPRING_DATASOURCE_USERNAME
-          value: root
-        - name: SPRING_DATASOURCE_PASSWORD
-          value: emartdbpass 
+          - name: DB_HOST
+            valueFrom:
+              configMapKeyRef:
+              name: mysql-config
+              key: DB_HOST
+
+          - name: DB_PORT
+            valueFrom:
+              configMapKeyRef:
+              name: mysql-config
+              key: DB_PORT
+
+          - name: DB_NAME
+            valueFrom:
+              configMapKeyRef:
+              name: mysql-config
+              key: MYSQL_DATABASE
+
+          - name: DB_USERNAME
+            valueFrom:
+              secretKeyRef:
+              name: mysql-secret
+              key: DB_USERNAME
+
+  - name: DB_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: mysql-secret
+        key: DB_PASSWORD 
