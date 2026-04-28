@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: nginx
+  name: nodejsapiclient
   namespace: argocd
 spec: 
   destination: 
@@ -10,7 +10,7 @@ spec:
   project: default
   
   source: 
-    path: Kubernetes_Manifest_Files/01-Frontend/05-IngressController
+    path: Kubernetes_Manifest_Files/01-Frontend/03-NodeJS_API
     repoURL: "https://github.com/cloudchaps/ARGOCD_Repository.git"
     targetRevision: main
     
@@ -21,3 +21,4 @@ spec:
 
     syncOptions:
       - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true

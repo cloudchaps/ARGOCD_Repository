@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: mysql
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: emartapp-application
+    server: "https://kubernetes.default.svc"
+  project: default
+  
+  source: 
+    path: Kubernetes_Manifest_Files/02-Backend/02-MYSQL
+    repoURL: "https://github.com/cloudchaps/ARGOCD_Repository.git"
+    targetRevision: main
+    
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true

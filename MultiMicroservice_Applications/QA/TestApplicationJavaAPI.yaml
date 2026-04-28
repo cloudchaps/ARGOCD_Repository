@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: nodejsapiclient
+  name: javaapiclient
   namespace: argocd
 spec: 
   destination: 
@@ -10,7 +10,7 @@ spec:
   project: default
   
   source: 
-    path: Kubernetes_Manifest_Files/01-Frontend/03-NodeJS_API
+    path: Kubernetes_Manifest_Files/01-Frontend/04-JAVA_API
     repoURL: "https://github.com/cloudchaps/ARGOCD_Repository.git"
     targetRevision: main
     
@@ -21,3 +21,4 @@ spec:
 
     syncOptions:
       - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
