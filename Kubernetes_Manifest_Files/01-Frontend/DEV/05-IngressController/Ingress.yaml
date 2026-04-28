@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: emartapp-ingress
-  namespace: emartapp-DEV
+  namespace: emartapp-dev
 spec:
   ingressClassName: nginx
   rules:

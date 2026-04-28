@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: javaapi-service
-  namespace: emartapp-DEV
+  namespace: emartapp-dev
 spec:
   selector:
     app: javaapi-service
