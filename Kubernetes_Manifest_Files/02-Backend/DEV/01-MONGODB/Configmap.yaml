@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mongo-init-script
-  namespace: emartapp-DEV
+  namespace: emartapp-dev
   annotations:
     argocd.argoproj.io/sync-wave: "1"
 data:
