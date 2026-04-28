@@ -3,32 +3,30 @@ kind: Ingress
 metadata:
   name: emartapp-ingress
   namespace: emartapp-application
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
     - host: emart.local
       http:
         paths:
-          - path: /()(.*)
-            pathType: ImplementationSpecific
+          - path: /
+            pathType: prefix
             backend:
               service:
                 name: client
                 port:
                   number: 4200
 
-          - path: /webapi(/|$)(.*)
-            pathType: ImplementationSpecific
+          - path: /webapi
+            pathType: prefix
             backend:
               service:
                 name: javaapi-service
                 port:
                   number: 9000
 
-          - path: /api(/|$)(.*)
-            pathType: ImplementationSpecific
+          - path: /api
+            pathType: prefix
             backend:
               service:
                 name: nodeapi-service
