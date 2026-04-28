@@ -1,16 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: javaapiclient
+  name: namespaceandsecrets
+  labels:
+    owner: cloudchaps
+    env: dev
   namespace: argocd
 spec: 
   destination: 
-    namespace: emartapp-application
-    server: "https://kubernetes.default.svc"
+    namespace: qa-remote-cluster
+    server: "https://ED696E7589BA7CA7C3378A23EDAD6B2D.gr7.us-east-1.eks.amazonaws.com"
   project: default
   
   source: 
-    path: Kubernetes_Manifest_Files/01-Frontend/04-JAVA_API
+    path: Kubernetes_Manifest_Files/01-Frontend/QA
     repoURL: "https://github.com/cloudchaps/ARGOCD_Repository.git"
     targetRevision: main
     
@@ -20,5 +23,4 @@ spec:
       selfHeal: true
 
     syncOptions:
-      - CreateNamespace=true
       - ApplyOutOfSyncOnly=true

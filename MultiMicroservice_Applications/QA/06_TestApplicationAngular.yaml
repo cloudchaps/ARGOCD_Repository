@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: nginx
+  name: angularclient
   namespace: argocd
 spec: 
   destination: 
     namespace: emartapp-application
-    server: "https://kubernetes.default.svc"
+    server: "https://ED696E7589BA7CA7C3378A23EDAD6B2D.gr7.us-east-1.eks.amazonaws.com"
   project: default
   
   source: 
-    path: Kubernetes_Manifest_Files/01-Frontend/05-IngressController
+    path: Kubernetes_Manifest_Files/01-Frontend/QA/02-Angular_Client
     repoURL: "https://github.com/cloudchaps/ARGOCD_Repository.git"
     targetRevision: main
     

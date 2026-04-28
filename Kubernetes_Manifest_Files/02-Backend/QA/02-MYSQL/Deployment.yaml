@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
-  namespace: emartapp-QA
+  namespace: emartapp-qa
 spec:
   replicas: 1
   selector:
@@ -22,10 +22,16 @@ spec:
 
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: emartdbpass
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQL_ROOT_PASSWORD
 
         - name: MYSQL_DATABASE
-          value: books
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-config
+              key: MYSQL_DATABASE
 
         volumeMounts:
         - name: mysql-data
