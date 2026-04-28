@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: emartapp-ingress
+  namespace: emartapp-application
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: emart.local
+      http:
+        paths:
+          - path: /()(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: angular-service
+                port:
+                  number: 4200
+
+          - path: /api/java(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: java-api-service
+                port:
+                  number: 9000
+
+          - path: /api/node(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: node-api-service
+                port:
+                  number: 5000
